@@ -84,14 +84,11 @@ def pollen_df_from_table(pollen_table):
     df = df.astype(float)
     return df
 
-def get_old_data():
-    df = pd.read_csv(r"data.csv", sep=",")
-    df["Date"] = pd.to_datetime(df["Date"])
-    mask = df["Date"] < datetime.now()
-    return df[mask]
+def from_file():
+    return pd.read_csv(r"data.csv", sep=",", index_col="Date")
 
 def main():
-    scrape_pollen()
+    pass
 
 if __name__ == "__main__":
     main()
