@@ -84,8 +84,8 @@ def pollen_df_from_table(pollen_table):
     df = df.astype(float)
     return df
 
-def from_file():
-    return pd.read_csv(r"data.csv", sep=",", index_col="Date")
+def read_data():
+    return pd.read_csv(r"data.csv", sep=",", index_col=0, parse_dates=True)
 
 def main():
     pass
